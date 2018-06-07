@@ -1,0 +1,49 @@
+<html>
+<head>
+  <title>Embedding Vega-Lite</title>
+  <script src="https://cdn.jsdelivr.net/npm/vega@4.0.0-rc.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@2.5.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0"></script>
+</head>
+<body>
+
+  <div id="vis"></div>
+
+  <script type="text/javascript">
+    var yourVlSpec = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+  "data": {
+    "url": "disasters.csv"
+  },
+  "width": 600,
+  "height": 400,
+  "transform": [
+    {"filter": "datum.Entity !== 'All natural disasters'"}
+  ],
+  "mark": {
+    "type": "circle",
+    "opacity": 0.8,
+    "stroke": "black",
+    "strokeWidth": 1
+  },
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "ordinal",
+      "axis": {"labelAngle": 0}
+    },
+    "y": {"field": "Entity", "type": "nominal", "axis": {"title": ""}},
+    "size": {
+      "field": "Deaths",
+      "type": "quantitative",
+      "legend": {"title": "Annual Global Deaths"},
+      "scale": {"range": [0, 5000]}
+    },
+    "color": {"field": "Entity", "type": "nominal", "legend": null}
+  }
+}
+
+    vegaEmbed("#vis", yourVlSpec);
+  </script>
+</body>
+</html>

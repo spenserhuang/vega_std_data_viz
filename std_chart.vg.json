@@ -1,0 +1,44 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+  "data": {"url": "std_data.csv"},
+  "layer": [{
+    "selection": {
+      "brush": {
+        "type": "interval",
+        "encodings": ["x"]
+      }
+    },
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "year",
+        "type": "ordinal"
+      },
+      "y": {
+        "aggregate": "mean",
+        "field": "std_cases",
+        "type": "quantitative"
+      },
+      "opacity": {
+        "condition": {
+          "selection": "brush", "value": 1
+        },
+        "value": 0.7
+      }
+    }
+  }, {
+    "transform": [{
+      "filter": {"selection": "brush"}
+    }],
+    "mark": "rule",
+    "encoding": {
+      "y": {
+        "aggregate": "mean",
+        "field": "std_cases",
+        "type": "quantitative"
+      },
+      "color": {"value": "firebrick"},
+      "size": {"value": 3}
+    }
+  }]
+}

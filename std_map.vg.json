@@ -1,0 +1,30 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+  "data": {
+    "url": "std_data.csv"
+  },
+  "width": 600,
+  "height": 400,
+  "transform": [],
+  "mark": {
+    "type": "point",
+    "opacity": 0.8,
+    "stroke": "black",
+    "strokeWidth": 1
+  },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "axis": {"labelAngle": 0}
+    },
+    "y": {"field": "disease", "type": "nominal"},
+    "size": {
+      "aggregate" : "total",
+      "field": "std_cases",
+      "type": "quantitative",
+      "scale": {"range": [0, 750]}
+    },
+    "color": {"field": "Entity", "type": "nominal", "legend": null}
+  }
+}
