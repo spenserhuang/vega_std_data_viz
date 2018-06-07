@@ -1,4 +1,4 @@
-notes, disease, disease_code, state, state_code, year, year_code, gender, gender_code, race, race_code, std_cases, population, rate, flag1, flag2
+Notes, Disease, Disease_code, State, State_code, Year, Year_code, Gender, Gender_code, Race, Race_code, Std_cases, Population, Rate, Flag1, Flag2
 ,Chlamydia,274,Alabama,1,1996,1996,Female,F,American Indian or Alaska Native,1002-5,0,10166,0,,,0,10166
 ,Chlamydia,274,Alabama,1,1996,1996,Female,F,Asian or Pacific Islander,A-PI,4,15910,25.1414,,,4,15910
 ,Chlamydia,274,Alabama,1,1996,1996,Female,F,Black or African American,2054-5,3207,601917,532.798,,,3207,601917
